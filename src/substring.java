@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.HashSet;
 
 public class substring {
@@ -13,11 +12,14 @@ public class substring {
 
             while(!mySet.contains(s.charAt(index))){
                 count++;
-                mySet.add(s.charAt(index)); 
-                index++;
+                mySet.add(s.charAt(index));
+                if(index < s.length()-1){
+                    index++;
+                }
             }
 
-            total = count > total ? count : total; //update counter
+            total = count >= total ? count : total; //update counter
+            count =0;
         }
         
         return total;
